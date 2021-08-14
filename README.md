@@ -36,4 +36,10 @@ This project is licensed under the MIT license.
 ​
 If you have any questions about the repo, open an issue or contact:
 
-- [Ryan] ()
+-[Angel](https://github.com/angelpena619)
+
+-[Ed]()
+
+-[Ryan](https://github.com/Damaximum)
+
+-[Wes]()
