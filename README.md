@@ -6,7 +6,6 @@
 
 ​
 
-
 ​
 
 ## Table of Contents
@@ -26,8 +25,6 @@ In order to use this application, visit the [deployed application]()
 
 ## Screenshot
 
-
-
 ## License
 
 ​
@@ -41,4 +38,8 @@ If you have any questions about the repo, open an issue or contact:
 
 -[Angel](https://github.com/angelpena619)
 
+-[Ed]()
 
+-[Ryan](https://github.com/Damaximum)
+
+-[Wes]()
