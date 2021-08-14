@@ -1,1 +1,1 @@
-# Pocket-Chef
+# Pocket-Chef by WARE
