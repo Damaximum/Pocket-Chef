@@ -6,7 +6,6 @@
 
 ​
 
-
 ​
 
 ## Table of Contents
@@ -26,8 +25,6 @@ In order to use this application, visit the [deployed application]()
 
 ## Screenshot
 
-
-
 ## License
 
 ​
@@ -39,4 +36,4 @@ This project is licensed under the MIT license.
 ​
 If you have any questions about the repo, open an issue or contact:
 
-
+- [Ryan] ()
