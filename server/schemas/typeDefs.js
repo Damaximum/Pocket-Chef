@@ -9,7 +9,15 @@ type User {
 }
 
 type Recipe {
-
+  recipeId: String!
+  image: String
+  link: String
+  title: String!
+  calorie: Int
+  instructions: String!
+  cookTime: Int
+  prepTime: Int
+  servings: Int
 }
 
 type Auth {
