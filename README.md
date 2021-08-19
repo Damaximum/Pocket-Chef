@@ -44,4 +44,4 @@ If you have any questions about the repo, open an issue or contact:
 
 -[Ryan](https://github.com/Damaximum)
 
--[Wes]()
+-[Wes](https://github.com/WesEvan)
