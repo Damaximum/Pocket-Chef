@@ -4,11 +4,11 @@
 
 ## Description
 
-​Pocket Chef: Your sous chef who's not deaf!
+​Pocket Chef: Your sous chef, on your desk or shelf!
 
-Isn't it annoying to always look up that one recipe you like online? Having difficulty finding said recipe? Maybe you have your own but you can't find that slippery recipe?!
+Isn't it annoying to always look up that one recipe you like online? Having difficulty finding said recipe? Maybe you have your own but you can't find that slippery recipe sheet or book?!
 
-Well Pocket Chef is the app for you! You can search for various recipes, including based on diets and intolerances. Then you can save it for future reference, all in one place! Furthermore, you can create and save your own recipes so that you won't have to search for those slippery recipe notes.
+Well Pocket Chef is the app for you! You can search for various recipes, including based on diets and intolerances. Then you can save it for future reference, all in one place! Furthermore, you can create and save your own recipes so that you won't have to search for those disappearing recipe notes.
 
 ## Table of Contents
 
