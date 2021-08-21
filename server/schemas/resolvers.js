@@ -51,12 +51,12 @@ const resolvers = {
       return user;
     },
 
-    saveRecipe: async ( parent, { recipeId, title, instructions }, context ) => {
-      console.log( 'saveRecipe()' );
-      console.log( context.user );
+    saveRecipe: async ( parent, { userId, recipeId, title, instructions }, context ) => {
+      // console.log( 'saveRecipe()' );
+      // console.log( context.user );
       let userInfo = User.findOneAndUpdate(
-        { _id: context.user._id },
-        // { _id: userId },
+        // { _id: context.user._id },
+        { _id: userId },
         {
           $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
         },
