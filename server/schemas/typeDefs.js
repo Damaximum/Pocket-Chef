@@ -1,9 +1,17 @@
 const { gql } = require("apollo-server-express");
 
+// notes: [Note]
+// type Note {
+//   _id: ID
+//   noteText: String
+//   createdAt: String
+// }
+
 const typeDefs = gql`
   type User {
     _id: ID
     username: String!
+    password: String!
     email: String!
     recipeCount: String!
     savedRecipes: [Recipe]
@@ -19,6 +27,7 @@ const typeDefs = gql`
     cookTime: Int
     prepTime: Int
     servings: Int
+    notes: String
   }
 
   type Auth {
@@ -28,26 +37,32 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    showUsers: [User]
   }
 
   input recipeInput {
+    userId: ID!
     recipeId: String!
-    image: String
-    link: String
     title: String!
-    calorie: Int
     instructions: String!
-    cookTime: Int
-    prepTime: Int
-    servings: Int
+  }
+
+  input noteInput {
+    userId: ID!
+    recipeId: String!
+    noteText: String!
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    saveRecipe(input: recipeInput): User
-    removeRecipe(recipeId: String!): User
+    addUser(username: String!, email: String!, password: String!): User
+    saveRecipe(recipeId: String!, title: String!, instructions: String!): User
+    addNote(input: noteInput): User
   }
 `;
+
+// type Mutation {
+//   removeRecipe(recipeId: String!): User
+// }
 
 module.exports = typeDefs;

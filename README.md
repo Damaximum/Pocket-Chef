@@ -40,8 +40,8 @@ If you have any questions about the repo, open an issue or contact:
 
 -[Angel](https://github.com/angelpena619)
 
--[Ed]()
+-[Ed](https://github.com/JEMinick)
 
 -[Ryan](https://github.com/Damaximum)
 
--[Wes]()
+-[Wes](https://github.com/WesEvan)
