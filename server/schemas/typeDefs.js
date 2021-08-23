@@ -35,9 +35,15 @@ const typeDefs = gql`
     user: User
   }
 
+  type ApiKeyInfo {
+    apiName: String
+    apiKey: String
+  }
+
   type Query {
     me: User
     showUsers: [User]
+    getApiKeys: [ApiKeyInfo]
   }
 
   input recipeInput {
@@ -57,9 +63,11 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): User
     saveRecipe(userId: String!, recipeId: String!, title: String!, instructions: String!): User
-    addNote(input: noteInput): User
+    removeRecipe(userId: String!, recipeId: String!): User
+    addRecipeNote(input: noteInput): User
   }
 `;
+    // addNote(userId: String!, recipeId: String!, noteText: String!): User
 
 // type Mutation {
 //   removeRecipe(recipeId: String!): User
