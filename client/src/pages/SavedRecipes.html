@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link rel="stylesheet" href="app.css" />
 </head>
 <body>
 
@@ -17,7 +16,7 @@
 
   <!-- Navigation Bar-->
   <div class="ui inverted labeled large menu">
-    <a class="active item" href='./Home.html'>
+    <a class="item" href='./Home.html'>
       <i class="home icon"></i>
       Home
     </a>
@@ -30,7 +29,7 @@
           <i class="search icon"></i>
           Search Recipe
         </a>
-        <a class="item" href="SavedRecipes.html">
+        <a class="active item" href="SavedRecipes.html">
           <i class="bookmark outline icon"></i>
           Saved Recipe
         </a>
@@ -42,47 +41,44 @@
     </div>
     <!-- Change if logged in or guest-->
     <div class="right menu">
-      <div class="item">
-        <div class="ui icon input">
-          <input type="text" placeholder="Search...">
-          <i class="search link icon"></i>
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="ui simple dropdown item">
+          <i class="user outline icon"></i>
+        Account
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="Profile.html">
+            <i class="address card outline icon"></i>
+            Profile
+          </a>
+          <a class="item" href="Login.html">
+            <i class="sign out alternate icon"></i>
+            Logout
+          </a>
         </div>
       </div>
-      <div class="ui simple dropdown item">
-        <i class="user outline icon"></i>
-      Account
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item" href="Profile.html">
-          <i class="address card outline icon"></i>
-          Profile
-        </a>
-        <a class="item" href="Login.html">
-          <i class="sign out alternate icon"></i>
-          Logout
-        </a>
       </div>
     </div>
-    </div>
-  </div>
-
-  <div class="ui divider"></div>
 
       <!--Searh box-->
       <div class="ui placeholder segment container">
-        <h1 class="ui center aligned header">What's Cooking?</h1>
+        <h1 class="ui center aligned header">Saved Recipes</h1>
             <div class="ui left icon input">
             <i class="search icon"></i>
-            <input type="text" name="searchBar" id="searchBar" placeholder="Search...">
+            <input type="text" placeholder="Search...">
             <button class="ui teal icon button">
               Search  
               </button>
           </div>
-
-          <ul id="recipeList"></ul>
-          <script src="SearchPage.js"></script>
+        <!-- <div class="ui vertical divider">
+          Or
+        </div> -->
       </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </body>

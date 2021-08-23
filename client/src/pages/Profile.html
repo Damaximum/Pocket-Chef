@@ -17,7 +17,7 @@
 
   <!-- Navigation Bar-->
   <div class="ui inverted labeled large menu">
-    <a class="active item" href='./Home.html'>
+    <a class="item" href='./Home.html'>
       <i class="home icon"></i>
       Home
     </a>
@@ -42,47 +42,44 @@
     </div>
     <!-- Change if logged in or guest-->
     <div class="right menu">
-      <div class="item">
-        <div class="ui icon input">
-          <input type="text" placeholder="Search...">
-          <i class="search link icon"></i>
+        <div class="active item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="ui simple dropdown item">
+          <i class="user outline icon"></i>
+        Account
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="Profile.html">
+            <i class="address card outline icon"></i>
+            Profile
+          </a>
+          <a class="item" href="Login.html">
+            <i class="sign out alternate icon"></i>
+            Logout
+          </a>
         </div>
       </div>
-      <div class="ui simple dropdown item">
-        <i class="user outline icon"></i>
-      Account
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <a class="item" href="Profile.html">
-          <i class="address card outline icon"></i>
-          Profile
-        </a>
-        <a class="item" href="Login.html">
-          <i class="sign out alternate icon"></i>
-          Logout
-        </a>
       </div>
     </div>
-    </div>
-  </div>
 
-  <div class="ui divider"></div>
-
-      <!--Searh box-->
+      <!-- Profile View -->
       <div class="ui placeholder segment container">
-        <h1 class="ui center aligned header">What's Cooking?</h1>
-            <div class="ui left icon input">
-            <i class="search icon"></i>
-            <input type="text" name="searchBar" id="searchBar" placeholder="Search...">
-            <button class="ui teal icon button">
-              Search  
-              </button>
-          </div>
+        <h1 class="ui center aligned header">My Profile</h1>
+        <!-- <div class="ui divider"> -->
 
-          <ul id="recipeList"></ul>
-          <script src="SearchPage.js"></script>
+              <div class="ui raised very padded text container segment">
+                <img src="../Images/HungryCorgi.jpg" class="ui circular image" id="profilePic">
+                <h2 class="ui header">Hungry Boy</h2>
+                <p></p>
+                <p></p>
+              </div>
+
+        </div>
       </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </body>

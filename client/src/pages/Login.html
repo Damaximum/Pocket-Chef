@@ -12,28 +12,114 @@
 </head>
 <body>
 
-    <form class="ui form segment raised very padded text container segment">
-        <h1>Login</h1>
-        <div class="field">
-          <label>Username</label>
-          <input placeholder="Username" name="username" type="text">
-        </div>
-        <div class="field">
-          <label>Password</label>
-          <input name="password" type="password">
-        </div>
-        <div class="ui primary submit button">Login</div>
-        <div class="ui reset button">Reset</div>
-        <div class="ui clear button">Clear</div>
-      </form>
-   
-      <!-- Test Output -->
-      <div class="ui raised very padded text container segment">
-        <h2 class="ui header">Login Testoutput</h2>
-        <p><Strong>Username: </Strong><span id='username'></span></p>
-        <p><Strong>Password: </Strong><span id='password'></span></p>
+  <img src="../Images/PocketChef-image.jpg">
+
+ <!-- Navigation Bar-->
+ <div class="ui inverted labeled large menu">
+  <a class="item" href='./Home.html'>
+    <i class="home icon"></i>
+    Home
+  </a>
+    <div class="ui simple dropdown item">
+      <i class="list ol icon"></i>
+    Recipes
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item" href="SearchRecipe.html">
+        <i class="search icon"></i>
+        Search Recipe
+      </a>
+      <a class="active item" href="SavedRecipes.html">
+        <i class="bookmark outline icon"></i>
+        Saved Recipe
+      </a>
+      <a class="item" href="./CreateRecipes.html">
+        <i class="pen square icon"></i>
+        Create Recipe
+      </a>
+    </div>
+  </div>
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
       </div>
-      
+    </div>
+    <div class="ui simple dropdown item">
+      <i class="user outline icon"></i>
+    Account
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <a class="item" href="Profile.html">
+        <i class="address card outline icon"></i>
+        Profile
+      </a>
+      <!-- Change if logged in or guest-->
+      <a class="active item" href="Login.html">
+        <i class="sign out alternate icon"></i>
+        Logout
+      </a>
+    </div>
+  </div>
+  </div>
+</div>
+
+      <!--Login / Sign Up Container-->
+      <div class="ui placeholder segment very padded container">
+        <div class="ui two column very relaxed stackable grid">
+          <div class="column">
+            <div class="ui form">
+              <div class="field">
+                <h1>Login</h1>
+                <label>Username</label>
+                <div class="ui left icon input">
+                  <!-- Left Column: Register -->
+                  <input type="text" placeholder="Username">
+                  <i class="user icon"></i>
+                </div>
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <div class="ui left icon input">
+                  <input type="password">
+                  <i class="lock icon"></i>
+                </div>
+              </div>
+              <div class="ui blue submit button">Login</div>
+              <!-- Invisible Horizontal Divider for mobile view-->
+              <div class="ui hidden divider"></div>
+            </div>
+          </div>
+          <div class="middle aligned column">
+            <!-- Right Column: Sign up-->
+            <div class="ui form">
+              <div class="field">
+                <h1>Sign Up</h1>
+                <label>Username</label>
+                <div class="ui left icon input">
+                  <input type="text" placeholder="Username">
+                  <i class="user icon"></i>
+                </div>
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <div class="ui left icon input">
+                  <input type="password">
+                  <i class="lock icon"></i>
+                </div>
+              </div>
+              <div class="inline field">
+                <div class="ui checkbox">
+                  <input name="terms" type="checkbox">
+                  <label>I agree to make delicious food</label>
+                </div>
+              </div>
+              <div class="ui positive submit button">Register</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </body>

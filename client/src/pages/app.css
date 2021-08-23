@@ -1,0 +1,40 @@
+#recipeList {
+    padding-inline-start: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 20px;
+}
+
+.recipe {
+    list-style-type: none;
+    background-color: #eaeaea;
+    border-radius: 3px;
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'name image'
+        'food image';
+    text-align: left;
+}
+
+.recipe > h2 {
+    grid-area: name;
+    margin-bottom: 0px;
+}
+
+.recipe > p {
+    grid-area: food;
+    margin: 0;
+    margin-top: -18px;
+}
+
+.recipe > img {
+    max-height: 100px;
+    grid-area: image;
+}
+
+#profilePic {
+    max-width: 40%;
+    height: auto;
+}
