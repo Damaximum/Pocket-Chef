@@ -15,7 +15,7 @@ searchBar.addEventListener('keyup', (e) => {
 //Calls third-party API for recipes
 const loadRecipes = async () => {
     try {
-        const res = await fetch('refer to ThirdParty API Here');
+        const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${query}&number=20`);
         recipeArray = await res.json();
         displayRecipe(recipe);
         // console.log(recipe);
@@ -30,9 +30,8 @@ const displayRecipe = (recipes) => {
         .map((recipes) => {
             return `
             <li class = "recipe">
-                <img src="${recipe.picture}></img>
-                <h2>${recipe.name}</h2>
-                <p>Ingredients: ${recipe.ingredients}</p>
+                <img src="${recipe.image}></img>
+                <h2>${recipe.title}</h2>
             </li>
         `;
          })

@@ -1,3 +1,5 @@
+const apikey = "5b2110da4dc545f3b3b1ab36e6f8562f";
+
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
   return fetch("/api/users/me", {
