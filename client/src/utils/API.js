@@ -1,3 +1,5 @@
+const apikey = "5b2110da4dc545f3b3b1ab36e6f8562f";
+
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
   return fetch("/api/users/me", {
@@ -28,20 +30,20 @@ export const loginUser = (userData) => {
   });
 };
 
-// save book data for a logged in user
-export const saveRecipe = (bookData, token) => {
+// save recipe data for a logged in user
+export const saveRecipe = (recipeData, token) => {
   return fetch("/api/users", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookData),
+    body: JSON.stringify(recipeData),
   });
 };
 
-// remove saved book data for a logged in user
-export const deleteRecipe = (bookId, token) => {
+// remove saved recipe data for a logged in user
+export const deleteRecipe = (recipeId, token) => {
   return fetch(`/api/users/recipes/${recipeId}`, {
     method: "DELETE",
     headers: {
@@ -53,6 +55,6 @@ export const deleteRecipe = (bookId, token) => {
 // make a search to spoonacular api
 export const searchSpoonacular = (query) => {
   return fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${query}`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${query}&number=20`
   );
 };
