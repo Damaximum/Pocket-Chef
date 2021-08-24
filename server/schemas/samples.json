@@ -1,0 +1,556 @@
+{
+"results": [
+  {
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "dairyFree": false,
+    "veryHealthy": false,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "weightWatcherSmartPoints": 8,
+    "gaps": "no",
+    "lowFodmap": false,
+    "aggregateLikes": 3,
+    "spoonacularScore": 56,
+    "healthScore": 15,
+    "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "license": "CC BY 3.0",
+    "sourceName": "Foodista",
+    "pricePerServing": 145.96,
+    "id": 654901,
+    "title": "Pasta With Chicken and Broccoli",
+    "readyInMinutes": 45,
+    "servings": 4,
+    "sourceUrl": "https://www.foodista.com/recipe/Y5X6DRHT/pasta-with-chicken-and-broccoli",
+    "image": "https://spoonacular.com/recipeImages/654901-312x231.jpg",
+    "imageType": "jpg",
+    "summary": "Pasta With Chicken and Broccoli might be a good recipe to expand your main course repertoire. This recipe makes 4 servings with <b>332 calories</b>, <b>19g of protein</b>, and <b>18g of fat</b> each. For <b>$1.46 per serving</b>, this recipe <b>covers 16%</b> of your daily requirements of vitamins and minerals. 3 people found this recipe to be flavorful and satisfying. A mixture of wine, parmesan cheese, basil leaves, and a handful of other ingredients are all it takes to make this recipe so yummy. It is brought to you by Foodista. From preparation to the plate, this recipe takes approximately <b>approximately 45 minutes</b>. Taking all factors into account, this recipe <b>earns a spoonacular score of 55%</b>, which is solid. Similar recipes are <a href=\"https://spoonacular.com/recipes/pasta-house-pasta-con-broccoli-this-is-an-alfredo-based-sauce-that-combines-pasta-fresh-mushrooms-and-fresh-broccoli-601199\">Pasta House Pasta con Broccoli – This is an Alfredo based sauce that combines pasta, fresh mushrooms, and fresh broccoli</a>, <a href=\"https://spoonacular.com/recipes/broccoli-and-pasta-with-chicken-479320\">Broccoli and Pasta with Chicken</a>, and <a href=\"https://spoonacular.com/recipes/pasta-with-chicken-and-broccoli-110475\">Pasta With Chicken and Broccoli</a>.",
+    "cuisines": [],
+    "dishTypes": [
+      "side dish",
+      "lunch",
+      "main course",
+      "main dish",
+      "dinner"
+    ],
+    "diets": [],
+    "occasions": [],
+    "analyzedInstructions": [
+      {
+        "name": "",
+        "steps": [
+          {
+            "number": 1,
+            "step": "In a large skillet, heat oil over medium heat.",
+            "ingredients": [
+              {
+                "id": 4582,
+                "name": "cooking oil",
+                "localizedName": "cooking oil",
+                "image": "vegetable-oil.jpg"
+              }
+            ],
+            "equipment": [
+              {
+                "id": 404645,
+                "name": "frying pan",
+                "localizedName": "frying pan",
+                "image": "pan.png"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "step": "Sautee garlic for about one minute, stirring constantly. DO NOT BURN.",
+            "ingredients": [
+              {
+                "id": 11215,
+                "name": "garlic",
+                "localizedName": "garlic",
+                "image": "garlic.png"
+              }
+            ],
+            "equipment": [],
+            "length": {
+              "number": 1,
+              "unit": "minutes"
+            }
+          },
+          {
+            "number": 3,
+            "step": "Add the chicken and cook until well done.",
+            "ingredients": [
+              {
+                "id": 5006,
+                "name": "whole chicken",
+                "localizedName": "whole chicken",
+                "image": "whole-chicken.jpg"
+              }
+            ],
+            "equipment": []
+          },
+          {
+            "number": 4,
+            "step": "Add the broccoli and cook until crisp but tender.",
+            "ingredients": [
+              {
+                "id": 11090,
+                "name": "broccoli",
+                "localizedName": "broccoli",
+                "image": "broccoli.jpg"
+              }
+            ],
+            "equipment": []
+          },
+          {
+            "number": 5,
+            "step": "Add basil; red pepper; salt and pepper to taste; wine and chicken broth. cook for about 5 minutes.",
+            "ingredients": [
+              {
+                "id": 1102047,
+                "name": "salt and pepper",
+                "localizedName": "salt and pepper",
+                "image": "salt-and-pepper.jpg"
+              },
+              {
+                "id": 6194,
+                "name": "chicken broth",
+                "localizedName": "chicken broth",
+                "image": "chicken-broth.png"
+              },
+              {
+                "id": 11821,
+                "name": "red pepper",
+                "localizedName": "red pepper",
+                "image": "red-pepper.jpg"
+              },
+              {
+                "id": 2044,
+                "name": "basil",
+                "localizedName": "basil",
+                "image": "basil.jpg"
+              },
+              {
+                "id": 14084,
+                "name": "wine",
+                "localizedName": "wine",
+                "image": "red-wine.jpg"
+              }
+            ],
+            "equipment": [],
+            "length": {
+              "number": 5,
+              "unit": "minutes"
+            }
+          },
+          {
+            "number": 6,
+            "step": "Add the cooked and drained pasta to the skillet and toss to combine.",
+            "ingredients": [
+              {
+                "id": 20420,
+                "name": "pasta",
+                "localizedName": "pasta",
+                "image": "fusilli.jpg"
+              }
+            ],
+            "equipment": [
+              {
+                "id": 404645,
+                "name": "frying pan",
+                "localizedName": "frying pan",
+                "image": "pan.png"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "step": "Heat for 1 to 2 minutes",
+            "ingredients": [],
+            "equipment": []
+          },
+          {
+            "number": 8,
+            "step": "Serve.",
+            "ingredients": [],
+            "equipment": []
+          },
+          {
+            "number": 9,
+            "step": "Top with grated Parmesan cheese if desired.",
+            "ingredients": [
+              {
+                "id": 1032,
+                "name": "grated parmesan cheese",
+                "localizedName": "grated parmesan cheese",
+                "image": "parmesan.jpg"
+              }
+            ],
+            "equipment": []
+          }
+        ]
+      }
+    ],
+    "spoonacularSourceUrl": "https://spoonacular.com/pasta-with-chicken-and-broccoli-654901",
+    "nutrition": {
+      "nutrients": [
+        {
+          "title": "Fat",
+          "name": "Fat",
+          "amount": 17.6731,
+          "unit": "g"
+        }
+      ]
+    }
+  },
+  {
+    "vegetarian": false,
+    "vegan": false,
+    "glutenFree": false,
+    "dairyFree": true,
+    "veryHealthy": false,
+    "cheap": false,
+    "veryPopular": false,
+    "sustainable": false,
+    "weightWatcherSmartPoints": 11,
+    "gaps": "no",
+    "lowFodmap": false,
+    "aggregateLikes": 2,
+    "spoonacularScore": 66,
+    "healthScore": 23,
+    "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
+    "license": "CC BY 3.0",
+    "sourceName": "Foodista",
+    "pricePerServing": 175.15,
+    "id": 654913,
+    "title": "Pasta With Chicken and Mushrooms",
+    "readyInMinutes": 45,
+    "servings": 6,
+    "sourceUrl": "http://www.foodista.com/recipe/6QZ47BPL/pasta-with-chicken-and-mushrooms",
+    "image": "https://spoonacular.com/recipeImages/654913-312x231.jpg",
+    "imageType": "jpg",
+    "summary": "Pasta With Chicken and Mushrooms might be just the main course you are searching for. This dairy free recipe serves 6 and costs <b>$1.75 per serving</b>. One serving contains <b>462 calories</b>, <b>36g of protein</b>, and <b>6g of fat</b>. 1 person has made this recipe and would make it again. From preparation to the plate, this recipe takes around <b>45 minutes</b>. A mixture of linguini, chicken broth, mushrooms, and a handful of other ingredients are all it takes to make this recipe so scrumptious. To use up the olive oil you could follow this main course with the <a href=\"https://spoonacular.com/recipes/sauteed-banana-granola-and-yogurt-parfait-624619\">Sauteed Banana, Granolan and Yogurt Parfait</a> as a dessert. All things considered, we decided this recipe <b>deserves a spoonacular score of 69%</b>. This score is solid. Try <a href=\"https://spoonacular.com/recipes/chicken-tetrazzini-pasta-with-chicken-and-mushrooms-in-cream-sauce-520837\">Chicken tetrazzini (Pasta with chicken and mushrooms in cream sauce)</a>, <a href=\"https://spoonacular.com/recipes/penne-pasta-with-chicken-and-mushrooms-655582\">Penne Pasta With Chicken And Mushrooms</a>, and <a href=\"https://spoonacular.com/recipes/chicken-piccata-with-pasta-mushrooms-695356\">Chicken Piccata with Pasta & Mushrooms</a> for similar recipes.",
+    "cuisines": [],
+    "dishTypes": [
+      "lunch",
+      "main course",
+      "main dish",
+      "dinner"
+    ],
+    "diets": [
+      "dairy free"
+    ],
+    "occasions": [],
+    "analyzedInstructions": [
+    {
+    "name": "",
+    "steps": [
+    {
+    "number": 1,
+    "step": "Bring 6 quarts of salted water to a rolling boil in a large pot. Season the flour with salt and pepper. Dredge the chicken in the seasoned flour.Shake off any excess.",
+    "ingredients": [
+    {
+    "id": 1102047,
+    "name": "salt and pepper",
+    "localizedName": "salt and pepper",
+    "image": "salt-and-pepper.jpg"
+    },
+    {
+    "id": 98980,
+    "name": "seasoned flour",
+    "localizedName": "seasoned flour",
+    "image": "flour.png"
+    },
+    {
+    "id": 5006,
+    "name": "whole chicken",
+    "localizedName": "whole chicken",
+    "image": "whole-chicken.jpg"
+    },
+    {
+    "id": 20081,
+    "name": "all purpose flour",
+    "localizedName": "all purpose flour",
+    "image": "flour.png"
+    },
+    {
+    "id": 0,
+    "name": "shake",
+    "localizedName": "shake",
+    "image": ""
+    },
+    {
+    "id": 14412,
+    "name": "water",
+    "localizedName": "water",
+    "image": "water.png"
+    }
+    ],
+    "equipment": [
+    {
+    "id": 404752,
+    "name": "pot",
+    "localizedName": "pot",
+    "image": "stock-pot.jpg"
+    }
+    ]
+    },
+    {
+    "number": 2,
+    "step": "Heat the oil in a large, heavy non-stick skillet over high heat. Brown the chicken on one side (about 3 minutes).",
+    "ingredients": [
+    {
+    "id": 5006,
+    "name": "whole chicken",
+    "localizedName": "whole chicken",
+    "image": "whole-chicken.jpg"
+    },
+    {
+    "id": 4582,
+    "name": "cooking oil",
+    "localizedName": "cooking oil",
+    "image": "vegetable-oil.jpg"
+    }
+    ],
+    "equipment": [
+    {
+    "id": 404645,
+    "name": "frying pan",
+    "localizedName": "frying pan",
+    "image": "pan.png"
+    }
+    ],
+    "length": {
+    "number": 3,
+    "unit": "minutes"
+    }
+    },
+    {
+    "number": 3,
+    "step": "Add the garlic. Turn the chicken. Scatter the mushrooms over the chicken. Cook for 3 minutes, shaking the skillet to distribute the mushrooms.",
+    "ingredients": [
+    {
+    "id": 11260,
+    "name": "mushrooms",
+    "localizedName": "mushrooms",
+    "image": "mushrooms.png"
+    },
+    {
+    "id": 5006,
+    "name": "whole chicken",
+    "localizedName": "whole chicken",
+    "image": "whole-chicken.jpg"
+    },
+    {
+    "id": 11215,
+    "name": "garlic",
+    "localizedName": "garlic",
+    "image": "garlic.png"
+    }
+    ],
+    "equipment": [
+    {
+    "id": 404645,
+    "name": "frying pan",
+    "localizedName": "frying pan",
+    "image": "pan.png"
+    }
+    ],
+    "length": {
+    "number": 3,
+    "unit": "minutes"
+    }
+    },
+    {
+    "number": 4,
+    "step": "Add the vinegar, broth, bay leaves, and thyme. Cover the skillet lightly. Cook, over medium heat for 10 minutes, turning the chicken once. Uncover.",
+    "ingredients": [
+    {
+    "id": 2004,
+    "name": "bay leaves",
+    "localizedName": "bay leaves",
+    "image": "bay-leaves.jpg"
+    },
+    {
+    "id": 5006,
+    "name": "whole chicken",
+    "localizedName": "whole chicken",
+    "image": "whole-chicken.jpg"
+    },
+    {
+    "id": 2053,
+    "name": "vinegar",
+    "localizedName": "vinegar",
+    "image": "vinegar-(white).jpg"
+    },
+    {
+    "id": 1006615,
+    "name": "broth",
+    "localizedName": "broth",
+    "image": "chicken-broth.png"
+    },
+    {
+    "id": 2049,
+    "name": "thyme",
+    "localizedName": "thyme",
+    "image": "thyme.jpg"
+    }
+    ],
+    "equipment": [
+    {
+    "id": 404645,
+    "name": "frying pan",
+    "localizedName": "frying pan",
+    "image": "pan.png"
+    }
+    ],
+    "length": {
+    "number": 10,
+    "unit": "minutes"
+    }
+    },
+    {
+    "number": 5,
+    "step": "Transfer the chicken to a warm plate. Cover with foil. Continue cooking the mushrooms for another 7 minutes. Cook the pasta, stirring frequently, in the boiling salted water until al dente.",
+    "ingredients": [
+    {
+    "id": 11260,
+    "name": "mushrooms",
+    "localizedName": "mushrooms",
+    "image": "mushrooms.png"
+    },
+    {
+    "id": 5006,
+    "name": "whole chicken",
+    "localizedName": "whole chicken",
+    "image": "whole-chicken.jpg"
+    },
+    {
+    "id": 20420,
+    "name": "pasta",
+    "localizedName": "pasta",
+    "image": "fusilli.jpg"
+    },
+    {
+    "id": 14412,
+    "name": "water",
+    "localizedName": "water",
+    "image": "water.png"
+    }
+    ],
+    "equipment": [
+    {
+    "id": 404765,
+    "name": "aluminum foil",
+    "localizedName": "aluminum foil",
+    "image": "aluminum-foil.png"
+    }
+    ],
+    "length": {
+    "number": 7,
+    "unit": "minutes"
+    }
+    },
+    {
+    "number": 6,
+    "step": "Drain.",
+    "ingredients": [],
+    "equipment": []
+    },
+    {
+    "number": 7,
+    "step": "Place on a warm serving plate. Arrange the chicken pieces over the pasta.",
+    "ingredients": [
+    {
+    "id": 1005006,
+    "name": "chicken pieces",
+    "localizedName": "chicken pieces",
+    "image": "chicken-parts.jpg"
+    },
+    {
+    "id": 20420,
+    "name": "pasta",
+    "localizedName": "pasta",
+    "image": "fusilli.jpg"
+    }
+    ],
+    "equipment": []
+    },
+    {
+    "number": 8,
+    "step": "Remove the bay leaf from the sauce.",
+    "ingredients": [
+    {
+    "id": 2004,
+    "name": "bay leaves",
+    "localizedName": "bay leaves",
+    "image": "bay-leaves.jpg"
+    },
+    {
+    "id": 0,
+    "name": "sauce",
+    "localizedName": "sauce",
+    "image": ""
+    }
+    ],
+    "equipment": []
+    },
+    {
+    "number": 9,
+    "step": "Pour the mushroom sauce over the chicken and pasta.",
+    "ingredients": [
+    {
+    "id": 11260,
+    "name": "mushrooms",
+    "localizedName": "mushrooms",
+    "image": "mushrooms.png"
+    },
+    {
+    "id": 5006,
+    "name": "whole chicken",
+    "localizedName": "whole chicken",
+    "image": "whole-chicken.jpg"
+    },
+    {
+    "id": 20420,
+    "name": "pasta",
+    "localizedName": "pasta",
+    "image": "fusilli.jpg"
+    },
+    {
+    "id": 0,
+    "name": "sauce",
+    "localizedName": "sauce",
+    "image": ""
+    }
+    ],
+    "equipment": []
+    },
+    {
+    "number": 10,
+    "step": "Serve.",
+    "ingredients": [],
+    "equipment": []
+    }
+    ]
+    }
+    ],
+    "spoonacularSourceUrl": "https://spoonacular.com/pasta-with-chicken-and-mushrooms-654913",
+    "nutrition": {
+    "nutrients": [
+    {
+    "title": "Fat",
+    "name": "Fat",
+    "amount": 5.75386,
+    "unit": "g"
+    }
+    ]
+    }
+  }
+],
+  "offset": 0,
+  "number": 2,
+  "totalResults": 17
+}

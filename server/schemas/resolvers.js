@@ -2,6 +2,12 @@ const { AuthenticationError } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 
+const dotenvResult = require('dotenv').config();
+// let jDotEnvResult = JSON.stringify(dotenvResult);
+// console.log(`dotenvResult: ${jDotEnvResult}`);
+const spoonacularApiKey=process.env.SPOONACULAR_API_KEY
+// console.log( `apiKey: "${spoonacularApiKey}"` );
+
 const resolvers = {
 
   Query: {
@@ -20,6 +26,19 @@ const resolvers = {
       const userInfo = await User.find({})
       .populate('savedRecipes')
       return userInfo;
+    },
+
+    getApiKeys: ( parent ) => {
+      let aApiKeys=[];
+      if ( spoonacularApiKey ) {
+        let spoonacularInfo = {
+          apiName: 'spoonacular',
+          apiKey: spoonacularApiKey
+        }
+        aApiKeys.push( spoonacularInfo );
+      }
+      console.log( `getApiKeys(): ${aApiKeys}` );
+      return( aApiKeys );
     }
 
   },
@@ -51,12 +70,12 @@ const resolvers = {
       return user;
     },
 
-    saveRecipe: async ( parent, { recipeId, title, instructions }, context ) => {
-      console.log( 'saveRecipe()' );
-      console.log( context.user );
+    saveRecipe: async ( parent, { userId, recipeId, title, instructions }, context ) => {
+      // console.log( 'saveRecipe()' );
+      // console.log( context.user );
       let userInfo = User.findOneAndUpdate(
-        { _id: context.user._id },
-        // { _id: userId },
+        // { _id: context.user._id },
+        { _id: userId },
         {
           $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
         },
@@ -65,32 +84,42 @@ const resolvers = {
           runValidators: true,
         }
       );
-
-      // let userInfo = await User.findOne( { _id: userId } );
-      // if ( userInfo ) {
-      //   let bFound=false;
-      //   for ( var i=0; !bFound && i < userInfo.savedRecipes.length; i++ )
-      //   {
-      //     if ( userInfo.savedRecipes[i].recipeId === recipeId ) {
-      //       bFound = true;
-      //     }
-      //   }
-      //   if ( !bFound ) {
-
-      //   }
-      // }
-
-      // const token = signToken(userInfo);
-      // return { token, userInfo };
-
       return userInfo;
     },
 
-    addNote: async (parent, { userId, recipeId, noteText }) => {
+    // removeRecipe: async ( parent, { userId, recipeId }, context ) => {
+    //   // console.log( 'removeRecipe()' );
+    //   // console.log( context.user );
+    //   let userInfo = User.findOneAndUpdate(
+    //     // { _id: context.user._id },
+    //     { _id: userId },
+    //     {
+    //       $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
+    //     },
+    //     {
+    //       new: true,
+    //       runValidators: true,
+    //     }
+    //   );
+
+    removeRecipe: async (parent, args, context) => {
+      // if ( context.user ) {
+        const updatedUser = await User.findOneAndUpdate(
+            { _id: args.userId },
+            { $pull: { savedRecipes: { recipeId: args.recipeId } } },
+            { new: true }
+        );
+
+        return updatedUser;
+      // }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+
+    addRecipeNote: async (parent, { userId, recipeId, noteText }) => {
       let userInfo = await User.findOne( { _id: userId } );
       if ( userInfo ) {
         let bFound=false;
-        for ( var i=0; i < userInfo.savedRecipes.length; i++ )
+        for ( var i=0; !bFound && i < userInfo.savedRecipes.length; i++ )
         {
           if ( userInfo.savedRecipes[i].recipeId === recipeId ) {
             userInfo.savedRecipes[i].notes = noteText;
@@ -101,10 +130,10 @@ const resolvers = {
       // const token = signToken(userInfo);
       // return { token, userInfo };
       return userInfo;
-    },
+    }
 
   }
 
-};
+}
 
 module.exports = resolvers;

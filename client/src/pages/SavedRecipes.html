@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+<body>
+
+    <img src="../Images/PocketChef-image.jpg">
+
+  <!-- Navigation Bar-->
+  <div class="ui inverted labeled large menu">
+    <a class="item" href='./Home.html'>
+      <i class="home icon"></i>
+      Home
+    </a>
+      <div class="ui simple dropdown item">
+        <i class="list ol icon"></i>
+      Recipes
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="SearchRecipe.html">
+          <i class="search icon"></i>
+          Search Recipe
+        </a>
+        <a class="active item" href="SavedRecipes.html">
+          <i class="bookmark outline icon"></i>
+          Saved Recipe
+        </a>
+        <a class="item" href="./CreateRecipes.html">
+          <i class="pen square icon"></i>
+          Create Recipe
+        </a>
+      </div>
+    </div>
+    <!-- Change if logged in or guest-->
+    <div class="right menu">
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="ui simple dropdown item">
+          <i class="user outline icon"></i>
+        Account
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item" href="Profile.html">
+            <i class="address card outline icon"></i>
+            Profile
+          </a>
+          <a class="item" href="Login.html">
+            <i class="sign out alternate icon"></i>
+            Logout
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+      <!--Searh box-->
+      <div class="ui placeholder segment container">
+        <h1 class="ui center aligned header">Saved Recipes</h1>
+            <div class="ui left icon input">
+            <i class="search icon"></i>
+            <input type="text" placeholder="Search...">
+            <button class="ui teal icon button">
+              Search  
+              </button>
+          </div>
+        <!-- <div class="ui vertical divider">
+          Or
+        </div> -->
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>
