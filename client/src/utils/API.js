@@ -58,3 +58,9 @@ export const searchSpoonacular = (query) => {
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${query}&number=20`
   );
 };
+
+// export const searchRecipeSpoonacular = (query) => {
+//   return fetch(
+//     `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apikey}`
+//   );
+// };

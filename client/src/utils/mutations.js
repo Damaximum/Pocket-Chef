@@ -24,10 +24,29 @@ export const ADD_USER = gql`
   }
 `;
 
-export const SAVE_RECIPE = gql``;
+export const SAVE_RECIPE = gql`
+mutation saveRecipe(
+  $recipeId: String!
+  $title: String!
+  $image: String!
+){
+saveRecipe(
+  userId: $userId
+  recipeId:$recipeId
+  title:$title
+  image:$image
+) {
+  username
+email
+savedRecipes{
+  title
+}
+}
+}
+`;
 
-export const REMOVE_RECIPE = gql``;
+// export const REMOVE_RECIPE = gql``;
 
-export const ADD_NOTE = gql``;
+// export const ADD_NOTE = gql``;
 
-export const REMOVE_NOTE = gql``;
+// export const REMOVE_NOTE = gql``;

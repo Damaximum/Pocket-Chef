@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 // import SavedRecipes from "./pages/SavedRecipes";
 import Navbar from "./components/Navbar";
+import Recipe from "./components/Recipe";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -39,6 +40,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             {/* <Route exact path="/saved" component={SavedRecipes} /> */}
+            <Route path="/:recipeId" component={Recipe} />
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
         </>

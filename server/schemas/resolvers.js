@@ -1,18 +1,20 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User } = require("../models");
 const { signToken } = require("../utils/auth");
-
+const fetch = require('node-fetch');
+const { response } = require("express");
 const dotenvResult = require('dotenv').config();
 // let jDotEnvResult = JSON.stringify(dotenvResult);
 // console.log(`dotenvResult: ${jDotEnvResult}`);
 const spoonacularApiKey=process.env.SPOONACULAR_API_KEY
 // console.log( `apiKey: "${spoonacularApiKey}"` );
+const apikey = "5b2110da4dc545f3b3b1ab36e6f8562f";
 
 const resolvers = {
 
   Query: {
-
     me: async (parent, args, context) => {
+      console.log(context.user._id)
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).select(
           "-__V -password"
@@ -39,6 +41,29 @@ const resolvers = {
       }
       console.log( `getApiKeys(): ${aApiKeys}` );
       return( aApiKeys );
+    },
+
+    apiQuery: async (parent, args, context) => {
+      // console.log(apikey)
+      let query = await fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${args.query}&number=20`
+      );
+      let {results} = await query.json();
+      // console.log(results);
+
+      return results;
+
+    },
+
+    recipeQuery: async (parent, args, context) => {
+      let query = await fetch(
+        `https://api.spoonacular.com/recipes/${args.recipeId}/information?apiKey=${apikey}`
+      );
+      let { id, title, readyInMinutes, servings, image, extendedIngredients, instructions, sourceUrl } = await query.json();
+      
+      // console.log(id, title, readyInMinutes, servings, image, extendedIngredients, instructions, sourceUrl)
+
+      return {id, title, readyInMinutes, servings, image, extendedIngredients, instructions, sourceUrl};
     }
 
   },
@@ -73,18 +98,21 @@ const resolvers = {
     saveRecipe: async ( parent, { userId, recipeId, title, instructions }, context ) => {
       // console.log( 'saveRecipe()' );
       // console.log( context.user );
-      let userInfo = User.findOneAndUpdate(
-        // { _id: context.user._id },
-        { _id: userId },
-        {
-          $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
-      return userInfo;
+      if (context.user) {
+        let userInfo = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          // { _id: userId },
+          {
+            $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+        return userInfo;
+      };
+      throw new AuthenticationError("You must be lodded in!");
     },
 
     // removeRecipe: async ( parent, { userId, recipeId }, context ) => {

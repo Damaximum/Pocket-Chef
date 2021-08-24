@@ -5,21 +5,43 @@ export const GET_ME = gql`
     me {
       _id
       username
-      password
       email
-      recipeCount
       savedRecipes {
         recipeId
         image
-        link
         title
-        // calorie
-        // instructions
-        // cookTime
-        // prepTime
-        // servings
-        notes
       }
     }
   }
 `;
+
+export const GET_QUERY = gql`
+query apiQuery ($query: String!) {
+  apiQuery (query: $query)
+  {
+    id
+    title
+    image
+  }
+}
+`;
+
+export const GET_RECIPE = gql`
+query recipeQuery ($recipeId: ID!){
+  recipeQuery (recipeId: $recipeId) {
+    id
+    image
+    sourceUrl
+    title
+    instructions
+    readyInMinutes
+    servings
+    notes
+    extendedIngredients {
+      original
+    }
+  }
+}
+`;
+
+

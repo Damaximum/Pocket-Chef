@@ -8,12 +8,13 @@ import {
   Card,
   CardColumns,
 } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import { searchSpoonacular } from "../utils/API";
 import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage";
 import { SAVE_RECIPE } from "../utils/mutations";
-import { useMutation } from "@apollo/client";
+import { GET_QUERY } from "../utils/queries";
+import { useMutation, useQuery } from "@apollo/client";
 
 const SearchRecipes = () => {
     // create state for holding returned google api data
@@ -26,6 +27,8 @@ const SearchRecipes = () => {
   
     // create a saveRecipe mutation
     const [saveRecipe, { error }] = useMutation(SAVE_RECIPE);
+    const { loading, error1, data } = useQuery(GET_QUERY);
+    
   
     // set up useEffect hook to save `savedRecipeIds` list to localStorage on component unmount
     // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
@@ -36,6 +39,8 @@ const SearchRecipes = () => {
     // create method to search for Recipes and set state on form submit
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+
+        console.log(data)
   
         if (!searchInput) {
             return false;
@@ -45,9 +50,9 @@ const SearchRecipes = () => {
             const response = await searchSpoonacular
                 (searchInput);
   
-            const { items } = await response.json();
-  
-            const recipeData = items.map((recipe) => ({
+            const results = await response.data;
+            console.log(results)
+            const recipeData = data.apiQuery.map((recipe) => ({
                 recipeId: recipe.id,
                 title: recipe.title,
                 image: recipe.image || "",
@@ -126,6 +131,7 @@ const SearchRecipes = () => {
         <CardColumns>
           {searchedRecipes.map((recipe) => {
             return (
+              <Link to={`/${recipe.id}`}>
               <Card key={recipe.recipeId} border="dark">
                 {recipe.image ? (
                   <Card.Img
@@ -153,6 +159,7 @@ const SearchRecipes = () => {
                   )}
                 </Card.Body>
               </Card>
+              </Link>
             );
           })}
         </CardColumns>
