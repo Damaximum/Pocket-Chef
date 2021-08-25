@@ -10,17 +10,23 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
+import { GET_API_KEYS } from '../utils/queries';
 import { searchSpoonacular } from "../utils/API";
 import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage";
 import { SAVE_RECIPE } from "../utils/mutations";
 // import { GET_QUERY } from "../utils/queries";
-import { useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 
 const SearchRecipes = () => {
+
+  let spoonacularApiKey='';
+
   // create state for holding returned google api data
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState("");
+
+  // const [spoonacularApiKey, setSpoonacularApiKey] = useState("");
 
   // create state to hold saved RecipeId values
   const [savedRecipeIds, setSavedRecipeIds] = useState(getSavedRecipeIds());
@@ -28,6 +34,8 @@ const SearchRecipes = () => {
   // create a saveRecipe mutation
   const [saveRecipe, { error }] = useMutation(SAVE_RECIPE);
   // const { loading, data } = useQuery(GET_QUERY);
+
+  const { loadingApiKeys, data } = useQuery(GET_API_KEYS);
 
   // set up useEffect hook to save `savedRecipeIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
@@ -46,10 +54,13 @@ const SearchRecipes = () => {
     }
 
     try {
-      const response = await searchSpoonacular(searchInput);
+      const response = await searchSpoonacular(spoonacularApiKey,searchInput);
 
       const { results } = await response.json();
-      // console.log(results)
+
+      console.log( `handleFormSubmit() results:`)
+      console.log(results)
+      
       const recipeData = results.map((recipe) => ({
         recipeId: recipe.id,
         title: recipe.title,
@@ -98,6 +109,26 @@ const SearchRecipes = () => {
   // if (loading) {
   //       return <div>Loading...</div>;
   //     }
+
+  if (loadingApiKeys) {
+    console.log( `SearchRecipes(): Loading...` );
+    return <h2>LOADING...</h2>;
+  }
+
+  const apiInfo = data?.getApiKeys || [];
+  if ( apiInfo.length === 0 )
+  {
+    // console.log( 'Waiting for apiKeys...' );
+  } else {
+    // console.log( `SearchRecipes(): Recieved API-KEY info:` );
+    for( var i=0; i < apiInfo.length; i++ ) {
+      if ( apiInfo[i].apiName === 'spoonacular' ) {
+        // console.log( `Found SPOONACULAR apiKey: [${apiInfo[i].apiKey}]` );
+        // setSpoonacularApiKey(apiInfo[i].apiKey);
+        spoonacularApiKey = apiInfo[i].apiKey;
+      }
+    }
+  }
 
   return (
     <>
