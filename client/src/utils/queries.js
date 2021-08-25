@@ -16,32 +16,29 @@ export const GET_ME = gql`
 `;
 
 export const GET_QUERY = gql`
-query apiQuery ($query: String!) {
-  apiQuery (query: $query)
-  {
-    id
-    title
-    image
+  query apiQuery($query: String!) {
+    apiQuery(query: $query) {
+      id
+      title
+      image
+    }
   }
-}
 `;
 
 export const GET_RECIPE = gql`
-query recipeQuery ($recipeId: ID!){
-  recipeQuery (recipeId: $recipeId) {
-    id
-    image
-    sourceUrl
-    title
-    instructions
-    readyInMinutes
-    servings
-    notes
-    extendedIngredients {
-      original
+  query recipeQuery($recipeId: ID!) {
+    recipeQuery(recipeId: $recipeId) {
+      id
+      image
+      sourceUrl
+      title
+      instructions
+      readyInMinutes
+      servings
+      notes
+      extendedIngredients {
+        original
+      }
     }
   }
-}
 `;
-
-
