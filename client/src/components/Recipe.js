@@ -3,7 +3,7 @@ import { Jumbotron, Container, Card } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { GET_RECIPE } from "../utils/queries";
 
-const Recipe = async (props) => {
+const Recipe = (props) => {
   //   console.log(props.match.params.recipeId);
 
   const recId = props.match.params.recipeId;
@@ -20,9 +20,6 @@ const Recipe = async (props) => {
 
   return (
     <>
-      {data.map((datas) => {
-        return <p>{datas.recipeQuery}</p>;
-      })}
       <Jumbotron>
         <Container>
           <h1> {data.recipeQuery.title} </h1>
@@ -38,7 +35,7 @@ const Recipe = async (props) => {
         <a href={data.recipeQuery.sourceUrl}> Link to the original recipe </a>
 
         <ul>
-          <li>Cook Time: {data.recipeQuery.readyInMinutes} </li>
+          <li> Cook Time: {data.recipeQuery.readyInMinutes} </li>
           <li> Serving Size: {data.recipeQuery.servings} </li>
         </ul>
 
