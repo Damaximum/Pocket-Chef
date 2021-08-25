@@ -22,7 +22,7 @@ Well Pocket Chef is the app for you! You can search for various recipes, includi
 ## Usage
 
 ​
-In order to use this application, visit the [deployed application]()
+In order to use this application, visit the [deployed application](https://pocket-chef.herokuapp.com)
 ​
 
 ## Screenshot
