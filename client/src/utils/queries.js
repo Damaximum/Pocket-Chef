@@ -1,5 +1,14 @@
 import { gql } from "@apollo/client";
 
+export const GET_API_KEYS = gql`
+  query getApiKeys {
+    getApiKeys {
+      apiName
+      apiKey
+    }
+  }
+`;
+
 export const GET_ME = gql`
   query me {
     me {

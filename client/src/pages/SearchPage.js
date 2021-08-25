@@ -14,6 +14,7 @@ searchBar.addEventListener('keyup', (e) => {
 
 //Calls third-party API for recipes
 const loadRecipes = async () => {
+    console.log( `loadRecipes(): apiKey:[${apiKey}], query:[${query}]` );
     try {
         const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${query}&number=20`);
         recipeArray = await res.json();
@@ -24,7 +25,8 @@ const loadRecipes = async () => {
     }
 };
 
-//Displays recipes                             TODO: validate all the search objects with ed and Ryan
+// Displays recipes
+// TODO: validate all the search objects with ed and Ryan
 const displayRecipe = (recipes) => {
     const htmlString = recipes
         .map((recipes) => {

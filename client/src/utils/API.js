@@ -1,4 +1,4 @@
-const apikey = "5b2110da4dc545f3b3b1ab36e6f8562f";
+// const apikey = "5b2110da4dc545f3b3b1ab36e6f8562f";
 
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
@@ -53,9 +53,10 @@ export const deleteRecipe = (recipeId, token) => {
 };
 
 // make a search to spoonacular api
-export const searchSpoonacular = (query) => {
+export const searchSpoonacular = (spoonacularApiKey,query) => {
+  console.log( `searchSpoonacular(${spoonacularApiKey},${query})` );
   return fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apikey}&query=${query}&number=20`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${spoonacularApiKey}&query=${query}&number=20`
   );
 };
 
