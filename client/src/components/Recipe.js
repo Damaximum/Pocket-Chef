@@ -45,6 +45,8 @@ const Recipe = (props) => {
           })}
           ;
         </Card>
+
+        <p>{data.recipeQuery.instructions}</p>
       </Container>
     </>
   );
