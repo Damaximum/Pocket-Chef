@@ -116,24 +116,16 @@ const resolvers = {
       return user;
     },
 
-<<<<<<< HEAD
     saveRecipe: async (parent, { recipeId, title, image }, context) => {
-=======
-    saveRecipe: async ( parent, {recipeId, title, image }, context ) => {
->>>>>>> wes
       // console.log( 'saveRecipe()' );
       // console.log( context.user );
       if (context.user) {
         let userInfo = await User.findOneAndUpdate(
           { _id: context.user._id },
           {
-<<<<<<< HEAD
             $addToSet: {
-              savedRecipes: { id: recipeId, title: title, image: image },
+              savedRecipes: { recipeId: recipeId, title: title, image: image },
             },
-=======
-            $addToSet: { savedRecipes: { recipeId: recipeId, title: title, image: image } },
->>>>>>> wes
           },
           {
             new: true,
