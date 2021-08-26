@@ -104,15 +104,14 @@ const resolvers = {
       return user;
     },
 
-    saveRecipe: async ( parent, { userId, recipeId, title, instructions }, context ) => {
+    saveRecipe: async ( parent, { recipeId, title, image }, context ) => {
       // console.log( 'saveRecipe()' );
       // console.log( context.user );
       if (context.user) {
         let userInfo = await User.findOneAndUpdate(
           { _id: context.user._id },
-          // { _id: userId },
           {
-            $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
+            $addToSet: { savedRecipes: { id: recipeId, title: title, image: image } },
           },
           {
             new: true,
@@ -140,33 +139,124 @@ const resolvers = {
     //   );
 
     removeRecipe: async (parent, args, context) => {
-      // if ( context.user ) {
-        const updatedUser = await User.findOneAndUpdate(
-            { _id: args.userId },
+      let updatedUser;
+      if ( context.user ) {
+        updatedUser = await User.findOneAndUpdate(
+            { _id: context.user._id },
             { $pull: { savedRecipes: { recipeId: args.recipeId } } },
             { new: true }
         );
 
         return updatedUser;
-      // }
-      // throw new AuthenticationError('You need to be logged in!');
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
 
-    addRecipeNote: async (parent, { userId, recipeId, noteText }) => {
-      let userInfo = await User.findOne( { _id: userId } );
-      if ( userInfo ) {
-        let bFound=false;
-        for ( var i=0; !bFound && i < userInfo.savedRecipes.length; i++ )
-        {
-          if ( userInfo.savedRecipes[i].recipeId === recipeId ) {
-            userInfo.savedRecipes[i].notes = noteText;
-            bFound = true;
+    addRecipeNote: async (parent, { recipeId, noteText }) => {
+      if ( context.user ) {
+        const userInfo = await User.findOne( { _id: context.user._id } );
+        if ( userInfo ) {
+          let bFound=false;
+          for ( var i=0; !bFound && i < userInfo.savedRecipes.length; i++ )
+          {
+            if ( userInfo.savedRecipes[i].id === recipeId ) {
+              userInfo.savedRecipes[i].notes = noteText;
+              bFound = true;
+            }
           }
         }
+        return userInfo;
       }
-      // const token = signToken(userInfo);
-      // return { token, userInfo };
-      return userInfo;
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    // patients.findOneAndUpdate(
+    //   {_id: "5cb939a3ba1d7d693846136c"},
+    //   {$set: {"myArray.$[el].value": 424214 } },
+    //   { 
+    //     arrayFilters: [{ "el.treatment": "beauty" }],
+    //     new: true
+    //   }
+    // )
+    // -----------
+    // {
+    //   "_id" : ObjectId("5cb939a3ba1d7d693846136c"),
+    //   "myArray" : [
+    //       {
+    //           "name" : "PW6178281935-20190425",
+    //           "treatment" : "beauty",
+    //           "value" : 0 <- i want to update this
+    //       },
+    //       {
+    //           "name" : "PW6178281935-24142444",
+    //           "treatment" : "muscle",
+    //           "value" : 0
+    //       }
+    //   ] 
+    // },
+    // -----------
+    updateNote: async (parent, { recipeId, noteText }, context) => {
+      let updatedUser;
+      if ( context.user ) {
+
+        console.log( `userId:[${context.user._id}], recipeId:[${recipeId}], notes:[${noteText}]` );
+
+        // updatedUser = await User.findOneAndUpdate(
+        //     { _id: context.user._id },
+        //     { $set: { "savedRecipes.$[el].notes": noteText } },
+        //     { 
+        //       arrayFilters: [{ "el.recipeId": recipeId }],
+        //       new: true
+        //     }
+        // );
+
+        // updatedUser = await User.findOne( { _id: context.user._id } );
+        // if ( updatedUser ) {
+        //   let bFound=false;
+        //   for ( var i=0; !bFound && i < userInfo.savedRecipes.length; i++ )
+        //   {
+        //     if ( userInfo.savedRecipes[i].recipeId === recipeId ) {
+        //       updatedUser = await User.findOneAndUpdate(
+        //           { _id: context.user._id },
+        //           { $set: { savedRecipes[i].notes: noteText } },
+        //           {
+        //             new: true
+        //           }
+        //       );
+        //       bFound = true;
+        //     }
+        //   }
+        // }
+
+        const noteUpd = await User.updateOne(
+          { _id: context.user._id, "savedRecipes.recipeId": recipeId },
+          { $set: { "savedRecipes.$.notes" : noteText } }
+        )
+        console.log( noteUpd );
+
+        updatedUser = await User.findOne( { _id: context.user._id } );
+        console.log( updatedUser );
+        
+        // if ( updatedUser ) {
+        //   console.log( `POST NOTE UPDATE RESULT:` );
+        //   // console.log( updatedUser );
+        //   let aSavedRecipes=updatedUser.savedRecipes;
+        //   let aNewRecipes=[];
+        //   for( let i=0; i < aSavedRecipes.length; i++ ) {
+        //     let savedReceipe=aSavedRecipes[i];
+        //     console.log( `SAVED RECIPE: [${i}]: ${aSavedRecipes[i].recipeId}, ${aSavedRecipes[i].title}, "NOTES: ${aSavedRecipes[i].notes}"` );
+        //     if ( savedReceipe.recipeId === recipeId ) {
+        //       console.log( 'updated note...' );
+        //       savedReceipe.notes = noteText;
+        //     }
+        //     aNewRecipes.push(savedReceipe);
+        //   }
+        //   console.log( aNewRecipes );
+        // }
+
+        return updatedUser;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     }
 
   }

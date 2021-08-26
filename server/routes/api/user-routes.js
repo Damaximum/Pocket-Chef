@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const {
   createUser,
+  login,
   getSingleUser,
   saveRecipe,
   deleteRecipe,
-  login,
 } = require("../../controllers/user-controller");
 
 // import middleware

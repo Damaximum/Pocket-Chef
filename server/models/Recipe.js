@@ -5,22 +5,22 @@ const recipeSchema = new Schema({
     type: String,
     required: true,
   },
+  title: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
   },
   link: {
     type: String,
   },
-  title: {
-    type: String,
-    required: true,
-  },
   calories: {
     type: Number,
   },
   instructions: {
     type: String,
-    required: true,
+    required: false,
   },
   cookTime: {
     type: Number,
@@ -31,6 +31,10 @@ const recipeSchema = new Schema({
   servings: {
     type: Number,
   },
+  notes: {
+    type: String,
+    required: true
+  }
 });
 
 module.exports = recipeSchema;

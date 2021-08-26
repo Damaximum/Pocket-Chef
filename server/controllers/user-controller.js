@@ -7,6 +7,7 @@ module.exports = {
 
   // get a single user by either their id or their username
   async getSingleUser({ user = null, params }, res) {
+    console.log( `getSingleUser()`;)
     const foundUser = await User.findOne({
       $or: [
         { _id: user ? user._id : params.id },
@@ -25,6 +26,7 @@ module.exports = {
 
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
   async createUser({ body }, res) {
+    console.log( `createUser()`;)
     const user = await User.create(body);
 
     if (!user) {
@@ -37,6 +39,7 @@ module.exports = {
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
   // {body} is destructured req.body
   async login({ body }, res) {
+    console.log( `login()`;)
     const user = await User.findOne({
       $or: [{ username: body.username }, { email: body.email }],
     });
