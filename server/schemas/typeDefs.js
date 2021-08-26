@@ -16,7 +16,7 @@ const typeDefs = gql`
   }
 
   type Recipe {
-    id: ID
+    recipeId: String
     image: String
     sourceUrl: String
     title: String
@@ -71,11 +71,13 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): User
     saveRecipe(recipeId: String!, title: String!, image: String!): User
-    removeRecipe(userId: String!, recipeId: String!): User
-    addRecipeNote(input: noteInput): User
+    removeRecipe(recipeId: String!): User
+    addRecipeNote(recipeId: String!, noteText: String!): User
+    updateNote(recipeId: String!, noteText: String!): User
   }
 `;
-    // addNote(userId: String!, recipeId: String!, noteText: String!): User
+// addRecipeNote(input: noteInput): User
+// addRecipeNote(recipeId: String!, noteText: String!): User
 
 // type Mutation {
 //   removeRecipe(recipeId: String!): User

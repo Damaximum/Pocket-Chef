@@ -29,19 +29,21 @@ mutation saveRecipe(
   $recipeId: String!
   $title: String!
   $image: String!
-){
-saveRecipe(
-  userId: $userId
-  recipeId:$recipeId
-  title:$title
-  image:$image
-) {
-  username
-email
-savedRecipes{
-  title
-}
-}
+)
+{
+  saveRecipe(
+    userId: $userId
+    recipeId:$recipeId
+    title:$title
+    image:$image
+  )
+  {
+    username
+    email
+    savedRecipes{
+      title
+    }
+  }
 }
 `;
 
