@@ -11,8 +11,8 @@ const Recipe = (props) => {
   const { loading, data } = useQuery(GET_RECIPE, {
     variables: { recipeId: recId },
   });
-  console.log(recId);
-  console.log(data);
+  // console.log(recId);
+  // console.log(data);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -49,7 +49,7 @@ const Recipe = (props) => {
           ;
         </Card>
 
-        <p>{data.recipeQuery.instructions}</p>
+        {data.recipeQuery.instructions}
       </Container>
     </>
   );
