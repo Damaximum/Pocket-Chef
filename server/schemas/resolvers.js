@@ -104,7 +104,7 @@ const resolvers = {
       return user;
     },
 
-    saveRecipe: async ( parent, { userId, recipeId, title, instructions }, context ) => {
+    saveRecipe: async ( parent, {recipeId, title, image }, context ) => {
       // console.log( 'saveRecipe()' );
       // console.log( context.user );
       if (context.user) {
@@ -112,7 +112,7 @@ const resolvers = {
           { _id: context.user._id },
           // { _id: userId },
           {
-            $addToSet: { savedRecipes: { recipeId: recipeId, title: title, instructions: instructions } },
+            $addToSet: { savedRecipes: { recipeId: recipeId, title: title, image: image } },
           },
           {
             new: true,
