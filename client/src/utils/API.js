@@ -54,7 +54,7 @@ export const deleteRecipe = (recipeId, token) => {
 };
 
 // make a search to spoonacular api
-export const searchSpoonacular = (query) => {
+export const searchSpoonacular = (spoonacularApiKey, query) => {
   console.log(`searchSpoonacular(${spoonacularApiKey},${query})`);
   return fetch(
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${spoonacularApiKey}&query=${query}&number=20`
