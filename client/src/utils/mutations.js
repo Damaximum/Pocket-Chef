@@ -22,19 +22,6 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_RECIPE = gql`
-
-mutation saveRecipe(
-  recipeId:$recipeId
-  title:$title
-  image:$image
-) {
-  username
-email
-savedRecipes{
-  title
-}
-}
-
   mutation saveRecipe($recipeId: String!, $title: String!, $image: String!) {
     saveRecipe(
       userId: $userId
