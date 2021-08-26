@@ -11,7 +11,7 @@ const Recipe = (props) => {
   const { loading, data } = useQuery(GET_RECIPE, {
     variables: { recipeId: recId },
   });
-
+  console.log(recId);
   console.log(data);
 
   if (loading) {
@@ -32,7 +32,10 @@ const Recipe = (props) => {
           alt={`The cover for ${data.recipeQuery.title}`}
         ></img>
 
-        <a href={data.recipeQuery.sourceUrl}> <br></br>Link to the original recipe </a>
+        <a href={data.recipeQuery.sourceUrl}>
+          {" "}
+          <br></br>Link to the original recipe{" "}
+        </a>
 
         <ul>
           <li> Cook Time: {data.recipeQuery.readyInMinutes} </li>
