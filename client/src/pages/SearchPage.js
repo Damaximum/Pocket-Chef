@@ -29,7 +29,7 @@ const loadRecipes = async () => {
 // TODO: validate all the search objects with ed and Ryan
 const displayRecipe = (recipes) => {
     const htmlString = recipes
-        .map((recipes) => {
+        .map((recipe) => {
             return `
             <li class = "recipe">
                 <img src="${recipe.image}></img>

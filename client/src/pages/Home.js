@@ -16,6 +16,14 @@ import { saveRecipeIds, getSavedRecipeIds } from "../utils/localStorage";
 import { SAVE_RECIPE } from "../utils/mutations";
 // import { GET_QUERY } from "../utils/queries";
 import { useQuery, useMutation } from "@apollo/client";
+import { 
+  Input, 
+  Menu,  
+  Dropdown,
+  Image,
+  Icon
+} from 'semantic-ui-react';
+import logo from '../Images/PocketChef-image.jpg';
 
 const SearchRecipes = () => {
 
@@ -132,6 +140,7 @@ const SearchRecipes = () => {
 
   return (
     <>
+
       <Jumbotron fluid className="text-light bg-dark">
         <Container>
           <h1>Search for Recipes!</h1>
@@ -166,8 +175,7 @@ const SearchRecipes = () => {
         <CardColumns>
           {searchedRecipes.map((recipe) => {
             return (
-              <Link to={`/${recipe.recipeId}`}>
-                <Card key={recipe.recipeId} border="dark">
+              <Card key={recipe.recipeId} border="dark">
                   {recipe.image ? (
                     <Card.Img
                       src={recipe.image}
@@ -176,7 +184,9 @@ const SearchRecipes = () => {
                     />
                   ) : null}
                   <Card.Body>
-                    <Card.Title>{recipe.title}</Card.Title>
+                    <Link to={`/${recipe.recipeId}`}>
+                      <Card.Title>{recipe.title}</Card.Title>
+                    </Link>
                     {Auth.loggedIn() && (
                       <Button
                         disabled={savedRecipeIds?.some(
@@ -194,7 +204,6 @@ const SearchRecipes = () => {
                     )}
                   </Card.Body>
                 </Card>
-              </Link>
             );
           })}
         </CardColumns>
