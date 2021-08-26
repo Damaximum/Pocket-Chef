@@ -1,4 +1,5 @@
-// const apikey = "5b2110da4dc545f3b3b1ab36e6f8562f";
+const dotenvResult = require("dotenv").config();
+const spoonacularApiKey = process.env.SPOONACULAR_API_KEY;
 
 // route to get logged in user's info (needs the token)
 export const getMe = (token) => {
@@ -53,8 +54,8 @@ export const deleteRecipe = (recipeId, token) => {
 };
 
 // make a search to spoonacular api
-export const searchSpoonacular = (spoonacularApiKey,query) => {
-  console.log( `searchSpoonacular(${spoonacularApiKey},${query})` );
+export const searchSpoonacular = (query) => {
+  console.log(`searchSpoonacular(${spoonacularApiKey},${query})`);
   return fetch(
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${spoonacularApiKey}&query=${query}&number=20`
   );
