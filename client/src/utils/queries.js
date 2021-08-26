@@ -37,7 +37,7 @@ export const GET_QUERY = gql`
 export const GET_RECIPE = gql`
   query recipeQuery($recipeId: ID!) {
     recipeQuery(recipeId: $recipeId) {
-      id
+      recipeId
       image
       sourceUrl
       title
