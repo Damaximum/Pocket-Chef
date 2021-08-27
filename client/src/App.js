@@ -44,10 +44,11 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/saved" component={SavedRecipe} />
-            <Route path="/:recipeId" component={Recipe} />
-            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+            <Route exact path="/SavedRecipes" component={SavedRecipe} />
+            <Route exact path="/recipe/:recipeId" component={Recipe} />
+            {/* <Route render={() => <h1 className="display-2">Wrong page!</h1>} /> */}
             <Route exact path='/Login' component={Login} />
+            <Route exact path="/Logout" component={Home} />
             <Route exact path='/Profile' component={Profile} />
             {/* <Route exact path='/SavedRecipe' component={SavedRecipe} /> */}
             <Route exact path='/SearchRecipes' component={SearchRecipe} />
