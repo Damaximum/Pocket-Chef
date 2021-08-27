@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+// import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+// import SignUpForm from './SignupForm';
+// import LoginForm from './LoginForm';
 import { 
   Input, 
   Menu,  
@@ -18,8 +18,9 @@ const AppNavbar = () => {
     const [showModal, setShowModal] = useState(false);
   
     return (
-        <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+      <>
+
+      {/* <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             Recipes Search
@@ -30,7 +31,6 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/'>
                 Search For Recipes
               </Nav.Link>
-              {/* if user is logged in show saved Recipes and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
@@ -44,14 +44,15 @@ const AppNavbar = () => {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
+
       {/* set modal data up */}
-      <Modal
+
+      {/* <Modal
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
@@ -76,7 +77,7 @@ const AppNavbar = () => {
             </Tab.Content>
           </Modal.Body>
         </Tab.Container>
-      </Modal>
+      </Modal> */}
         
 
       <Image centered src={logo} size={'medium'}/>
@@ -90,13 +91,13 @@ const AppNavbar = () => {
                 <Dropdown item text='Recipes'>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <Link to="/SearchRecipe">
-                            <font color ={'black'}><Icon fitted name='search'/>Search Recipe</font>
+                        <Link to="/SearchRecipes">
+                            <font color ={'black'}><Icon fitted name='search'/>Search for Recipes</font>
                         </Link>
                     </Dropdown.Item>
                     <Dropdown.Item>
-                        <Link to="/SavedRecipe">
-                            <font color ={'black'}><Icon fitted name='bookmark outline'/>Saved Recipe</font>
+                        <Link to="/SavedRecipes">
+                            <font color ={'black'}><Icon fitted name='bookmark outline'/>View Saved Recipes</font>
                         </Link>
                     </Dropdown.Item>
                     <Dropdown.Item>
@@ -111,16 +112,41 @@ const AppNavbar = () => {
               </Menu.Item>
               <Dropdown item text='Account'>
                 <Dropdown.Menu>
-                    <Dropdown.Item>
+
+                    {/* <Dropdown.Item>
                         <Link to="/Profile">
                             <font color ={'black'}><Icon fitted name='user outline'/>Profile</font>
                         </Link>
-                    </Dropdown.Item>
-                    <Dropdown.Item>
+                    </Dropdown.Item> */}
+
+                    {Auth.loggedIn() ? (
+                      <>
+                        <Dropdown.Item>
+                          <Link to="/Profile">
+                              <font color ={'black'}><Icon fitted name='user profile'/>Profile</font>
+                          </Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                          <Link to="/Logout">
+                            {Auth.logout}
+                            <font color ={'black'}><Icon fitted name='sign out alternate' onClick={Auth.logout}/>Logout</font>
+                          </Link>
+                        </Dropdown.Item>
+                      </>
+                    ) : (
+                      <Dropdown.Item>
                         <Link to="/Login">
-                            <font color ={'black'}><Icon fitted name='sign out alternate'/>Logout</font>
+                            <font color ={'black'}><Icon fitted name='sign out alternate'/>Login</font>
                         </Link>
-                    </Dropdown.Item>
+                      </Dropdown.Item>
+                    )}
+
+                  {/* <Dropdown.Item>
+                      <Link to="/Login">
+                          <font color ={'black'}><Icon fitted name='sign out alternate'/>Logout</font>
+                      </Link>
+                  </Dropdown.Item> */}
+
                 </Dropdown.Menu>
                 </Dropdown>
             </Menu.Menu>

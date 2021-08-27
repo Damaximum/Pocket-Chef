@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+// import recipebackground from '../Images/home-wallpaper.jpg';
+import recipebackground from '../Images/bethany01.jpg';
+
 import {
   Jumbotron,
   Container,
@@ -140,8 +143,12 @@ const SearchRecipes = () => {
 
   return (
     <>
+      {/* <div style={{border: "2px solid yellow"}}> */}
+      <div style={{minWidth: "600px"}}>
+      <Image centered src={recipebackground} size={'huge'}/>
+      </div>
 
-      <Jumbotron fluid className="text-light bg-dark">
+      {/* <Jumbotron fluid className="text-light bg-dark">
         <Container>
           <h1>Search for Recipes!</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -164,9 +171,9 @@ const SearchRecipes = () => {
             </Form.Row>
           </Form>
         </Container>
-      </Jumbotron>
+      </Jumbotron> */}
 
-      <Container>
+      {/* <Container>
         <h2>
           {searchedRecipes.length
             ? `Viewing ${searchedRecipes.length} results:`
@@ -184,7 +191,7 @@ const SearchRecipes = () => {
                     />
                   ) : null}
                   <Card.Body>
-                    <Link to={`/${recipe.recipeId}`}>
+                    <Link to={`/recipe/${recipe.recipeId}`}>
                       <Card.Title>{recipe.title}</Card.Title>
                     </Link>
                     {Auth.loggedIn() && (
@@ -207,7 +214,8 @@ const SearchRecipes = () => {
             );
           })}
         </CardColumns>
-      </Container>
+      </Container> */}
+
     </>
   );
 };

@@ -4,8 +4,8 @@ const { signToken } = require("../utils/auth");
 const fetch = require("node-fetch");
 const { response } = require("express");
 const dotenvResult = require("dotenv").config();
-// let jDotEnvResult = JSON.stringify(dotenvResult);
-// console.log(`dotenvResult: ${jDotEnvResult}`);
+// let jsDotEnvResult = JSON.stringify(dotenvResult);
+// console.log(`dotenvResult: ${jsDotEnvResult}`);
 const spoonacularApiKey = process.env.SPOONACULAR_API_KEY;
 // console.log( `apiKey: "${spoonacularApiKey}"` );
 
@@ -111,9 +111,8 @@ const resolvers = {
 
     addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
-      // const token = signToken(user);
-      // return { token, user };
-      return user;
+      const token = signToken(user);
+      return { token, user };
     },
 
     saveRecipe: async (parent, { recipeId, title, image }, context) => {
@@ -246,10 +245,10 @@ const resolvers = {
           { _id: context.user._id, "savedRecipes.recipeId": recipeId },
           { $set: { "savedRecipes.$.notes": noteText } }
         );
-        console.log(noteUpd);
+        // console.log(noteUpd);
 
         updatedUser = await User.findOne({ _id: context.user._id });
-        console.log(updatedUser);
+        // console.log(updatedUser);
 
         // if ( updatedUser ) {
         //   console.log( `POST NOTE UPDATE RESULT:` );
@@ -260,7 +259,7 @@ const resolvers = {
         //     let savedReceipe=aSavedRecipes[i];
         //     console.log( `SAVED RECIPE: [${i}]: ${aSavedRecipes[i].recipeId}, ${aSavedRecipes[i].title}, "NOTES: ${aSavedRecipes[i].notes}"` );
         //     if ( savedReceipe.recipeId === recipeId ) {
-        //       console.log( 'updated note...' );
+        //       console.log( '   updating note...' );
         //       savedReceipe.notes = noteText;
         //     }
         //     aNewRecipes.push(savedReceipe);
